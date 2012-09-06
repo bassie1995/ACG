@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp" >
+
+        <EditText
+            android:id="@+id/eTxtStudentNum"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:freezesText="true"
+            android:hint="Vul je leerlingnummer in"
+            android:inputType="text" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/btnStSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/eTxtStudentNum"
+            android:layout_marginTop="8dp"
+            android:onClick="StSchedule"
+            android:text="Standaardrooster" />
+
+        <Button
+            android:id="@+id/btnDaySchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/eTxtStudentNum"
+            android:layout_marginTop="8dp"
+            android:onClick="DaySchedule"
+            android:text="     Dagrooster     " />
+
+        <EditText
+            android:id="@+id/eTxtClass"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnStSchedule"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:hint="Vul je klas in (als 5Vc, 4Mb)"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnChanges"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/eTxtClass"
+            android:layout_alignRight="@+id/btnDaySchedule"
+            android:layout_below="@+id/eTxtClass"
+            android:onClick="ClassChanges"
+            android:text="Wijzigingen" />
+
+        <Button
+            android:id="@+id/btnDayClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btnStSchedule"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/eTxtClass"
+            android:text="Dagrooster klas" />
+    </RelativeLayout>
+
+</ScrollView>

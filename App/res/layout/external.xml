@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp" >
+
+        <Button
+            android:id="@+id/btnOuderPortaal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/btnInfobord"
+            android:layout_marginBottom="8dp"
+            android:text="Onderwijsportaal" />
+
+        <Button
+            android:id="@+id/btnTeletop"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnOuderPortaal"
+            android:layout_marginBottom="8dp"
+            android:text="Teletop" />
+
+        <Button
+            android:id="@+id/btnWebmail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnTeletop"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:text="Webmail" />
+
+        <Button
+            android:id="@+id/btnInfobord"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Informatiebord" />
+
+        <Button
+            android:id="@+id/btnYouTube"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnWebmail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:text="ACG YouTube" />
+
+        <Button
+            android:id="@+id/btnTwitter"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnYouTube"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:text="ACG Twitter-accounts" />
+
+        <Button
+            android:id="@+id/btnFacebook"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnTwitter"
+            android:layout_centerHorizontal="true"
+            android:text="ACG Facebook-accounts" />
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/save"
+        android:icon="@drawable/ic_save"
+        android:showAsAction="ifRoom|withText"
+        android:title="Webpagina opslaan voor offline gebruik"/>
+    <item
+        android:id="@+id/web"
+        android:icon="@drawable/ic_web"
+        android:showAsAction="ifRoom|withText"
+        android:title="Open in webbrowser"/>
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_settings"
+        android:showAsAction="ifRoom|withText"
+        android:title="Instellingen"/>
+    <item
+        android:id="@+id/about"
+        android:icon="@drawable/ic_about"
+        android:showAsAction="ifRoom|withText"
+        android:title="Over de app"/>
+
+</menu>

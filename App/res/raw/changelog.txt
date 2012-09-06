@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <style type='text/css'>
+      a            { color:#000000 }
+      div.title    { 
+          color:#000000; 
+          font-size:1.2em; 
+          font-weight:bold; 
+          margin-top:1em; 
+          margin-bottom:0.5em; 
+          text-align:center }
+      div.subtitle { 
+          color:#000000; 
+          font-size:0.8em; 
+          margin-bottom:1em; 
+          text-align:center }
+      div.freetext { color:#F0F0F0 }
+      div.list     { color:#C0C0F0 }
+    </style>
+  </head>
+  <body>
+ $ 7.0
+  % Versie: RC7
+  _ 25-05-2012
+    * <span style="color:red"><b>VUL JE LEERLINGNUMMER EN KLAS IN BIJ Instellingen!</span></b>
+    * Verbeteringen in de code (minder regels) :)
+    * Lerarenlijst compleet!
+    * Dialogen in Links zijn ook Fragments
+    * De drie hoofdschermen zijn nu Fragments, dus heen en weer "schuiven" met je vinger werkt
+    * ActionBarSherlock geheel werkend, nu ook in het hoofdscherm
+    * Hernoemd naar ACG
+    * Lijst werkt op kleine apparaten goed (in de ActionBar, als de tabbladen niet passen) 
+    * "Over de app" verder uitgebreid en opnieuw ingedeeld
+    * Titel "YouTube" in WebView toegevoegd
+    * Vast nog wel wat andere dingen die ik vergeten ben :)
+ $ 6.0
+  % Versie: RC6
+  _ 06-04-2012
+    * Contact-pagina aangepast: Nu 30 leraren in de lijst!
+    * ActionBarSherlock grotendeels werkend, in de meeste schermen
+    * Dag- en standaardrooster van leraren is te bekijken
+    * Twitter-, Facebook- en YouTube-knoppen aanwezig
+    * Layouts aangepast, meer schermen scrollen
+    * Extra info in "Over de app"
+    * Eerste aanzet tot veranderen thema
+    * WebView is aangepast, zoom werkt nu volledig
+    * Hernoemd naar Antoniuscollege Gouda
+    * Vast nog wel wat andere dingen die ik vergeten ben :)
+    <span style="color:blue">BEKENDE BUGS:</span>
+    * Contact-pagina moet meer leraren hebben
+$ 5.0
+  % Versie: RC5
+  _ 01-03-2012
+    * Contact-pagina aangepast: Lijst met leraren en hun contactinformatie (onder constructie!)
+    * "Settings" veranderd in "Instellingen"
+    * "Preferences" veranderd in "Voorkeuren"
+$ 4.0
+  % Versie: RC4
+  _ 18-02-2012
+    * Cache van de app wordt nu weggegooid als de app compleet afgesloten wordt
+    * Knop voor infobord
+    * Namen van tabbladen veranderd
+    * Grootte en indeling van de knoppen in Links veranderd
+$ 3.0
+  % Versie: RC3
+  _	08-02-2012
+  	* WebView Cache wordt weggegooid als WebView gesloten wordt
+  	* ProgressBar in WebView
+$ 2.0
+  % Versie: RC2
+  _ 24-01-2012
+    * Leerlingnummer en klas worden nu pas gereset als de app afgesloten is 
+$ 1.0
+  % Versie: RC1 (~30 beta's)
+  _ 23-01-2012
+    * Eerste Release Candidate
+    * WebView met ProgressBar
+    * Teletop laadt apart in de standaard browser
+    * Alle knoppen werken in Home
+    * Extern werkt compleet
+    * Home slaat gegevens op
+    * Tabs werken
+    * ChangeLog gemaakt en in de app verwerkt 
+    * Versies voor alle API's
+    * Iconen voor alle schermgroottes
+    * Goede landscape en portrait layouts
+    * Internet-controle
+$ END_OF_CHANGE_LOG
+  </body>
+</html>

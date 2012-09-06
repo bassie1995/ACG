@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="20dp" >
+
+    <EditText
+        android:id="@+id/eTxtStudentNum"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Vul je leerlingnummer in"
+        android:inputType="text" >
+    </EditText>
+
+    <Button
+        android:id="@+id/btnStSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/eTxtStudentNum"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:onClick="StSchedule"
+        android:text="Standaardrooster" />
+
+    <Button
+        android:id="@+id/btnDaySchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btnChanges"
+        android:layout_below="@id/eTxtStudentNum"
+        android:layout_marginTop="8dp"
+        android:onClick="DaySchedule"
+        android:text="Dagrooster" />
+
+    <EditText
+        android:id="@+id/eTxtClass"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnStSchedule"
+        android:layout_marginTop="15dip"
+        android:hint="Vul je klas in (als 5Vc, 4Mb)"
+        android:inputType="text" >
+    </EditText>
+
+    <Button
+        android:id="@+id/btnChanges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/eTxtClass"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="8dp"
+        android:onClick="Class"
+        android:text="Wijzigingen" />
+
+    <Button
+        android:id="@+id/btnDayClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnChanges"
+        android:layout_alignLeft="@+id/btnStSchedule"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:onClick="DayClass"
+        android:text="Dagrooster klas" />
+
+</RelativeLayout>

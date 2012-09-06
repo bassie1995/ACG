@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Sherlock.__Theme.Light.DarkActionBar" parent="@style/Theme.Sherlock.Light.DarkActionBar" />
+
+</resources>

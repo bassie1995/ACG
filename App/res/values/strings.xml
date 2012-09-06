@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ACG</string>
+    
+    <string name="mail">Mail de ontwikkelaar</string>
+    <string name="app_info_email_subject">Feedback voor app Antoniuscollege</string>
+    <string name="app_email_address">basverhoog95@gmail.com</string>
+    
+    <string name="text_preferences">Standaardwaarden</string>
+    
+    <string name="StudentID">StudentID</string>
+    <string name="ID_title">Leerlingnummer</string>
+    <string name="ID_extra">Vul je leerlingnummer in</string>
+    <string name="ID_dialog_title">Leerlingnummer</string>
+    
+    <string name="ClassID">ClassID</string>
+    <string name="Class_title">Klas</string>
+    <string name="Class_extra">Vul je klas in</string>
+    <string name="Class_dialog_title">Klas</string>
+    
+    <string name="theme_preferences">Thema</string>
+    <string name="Theme_key">Theme</string>
+    <string name="Theme_title">Thema</string>
+    <string name="Theme_extra">Kies het gewenste thema</string>
+    <string name="Theme_default">Donker</string>
+    <string name="Theme_dialog_title">Thema</string>
+    <string name="Theme_summary">Kies het thema voor de app</string>
+    
+    <string name="changelog_full_title">Changelog</string>
+    <string name="changelog_title">Wat is er veranderd?</string>
+    <string name="changelog_ok_button">OK</string>
+    
+    <string name="twitter_dialog_title">Kies Twitter-account</string>
+    <string name="facebook_dialog_title">Kies Facebook-account</string>
+
+    <string-array name="teachers_array">
+        <item>G. Aalders</item>
+        <item>W. Abspoel</item>
+        <item>A. Bakker</item>
+        <item>J. Benjamens</item>
+        <item>P. Benten</item>
+        <item>J. van den Berg</item>
+        <item>A. van Bloois</item>
+        <item>J. Bode</item>
+        <item>H. Bolscher</item>
+        <item>M. Bouwmeester</item>
+        <item>M. de Bruijn</item>
+        <item>J. Cox</item>
+        <item>R. van Diermen</item>
+        <item>C. Ebskamp</item>
+        <item>W. Eenhuizen</item>
+        <item>C. Fernald</item>
+        <item>C. van Gend</item>
+        <item>W. Grens</item>
+        <item>A. van Groningen</item>
+        <item>H. Grootenhuijs</item>
+        <item>M. Heerema</item>
+        <item>J. de Heij</item>
+        <item>T. Horrevorts</item>
+        <item>J. Insulani</item>
+        <item>C. Janssen</item>
+        <item>M. de Jong</item>
+        <item>L. Krijnen</item>
+        <item>J. Krijtenburg</item>
+        <item>M. Langeveld</item>
+        <item>W. Logtenberg</item>
+        <item>A. Munting</item>
+        <item>W. Otte</item>
+        <item>H. Romijn</item>
+        <item>S. van der Sande</item>
+        <item>D. Schouten</item>
+        <item>J. Schwarze</item>
+        <item>P. Shankar</item>
+        <item>P. Smit</item>
+        <item>J. Spitsbaard</item>
+        <item>M. van Swaaij</item>
+        <item>M. Verbree</item>
+        <item>H. Vester</item>
+        <item>H. Vink</item>
+        <item>R. Voorsluijs</item>
+        <item>E. Vos</item>
+        <item>A. de Vries</item>
+        <item>Y. Westhuis</item>
+        <item>M. Wiekart</item>
+        <item>B. de Wilde</item>
+        <item>F. van Zoest</item>
+        <item>I. Mordhorst</item>
+        <item>R. Peek</item>
+        <item>M. van der Horst</item>
+        <item>J. Adriaanse</item>
+        <item>J. van Driel</item>
+        <item>J. Hoebergen</item>
+        <item>B. Reuten</item>
+        <item>E. Willems</item>
+        <item>V. Meyer</item>
+        <item>J. van de Vorst</item>
+        <item>R. Graafland</item>
+        <item>M. Prins</item>
+        <item>J. Gijsberts</item>
+        <item>C. van der Linden</item>
+        <item>H. de Vries</item>
+        <item>J. Bosch</item>
+        <item>M. Hamidy</item>
+        <item>S. van de Werken</item>
+        <item>H. Nuvelstein</item>
+    </string-array>
+    
+    <string-array name="theme_array">
+        <item>Donker</item>
+        <item>Licht</item>
+    </string-array>
+    
+    <string-array name="theme_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+</resources>
