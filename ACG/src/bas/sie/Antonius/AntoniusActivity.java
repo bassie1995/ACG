@@ -85,13 +85,13 @@ public class AntoniusActivity extends SherlockFragmentActivity {
 									System.exit(0);
 									Log.d("AlertDialog", "Negative");
 								}
-							}).show();
+							})
+			.show();
 		}
 
-		ChangeLog cl = new ChangeLog(this);
+	ChangeLog cl = new ChangeLog(this);
 		if (cl.firstRun())
-			cl.getFullLogDialog().show();
-
+		cl.getFullLogDialog().show();
 	}
 
 	@Override
