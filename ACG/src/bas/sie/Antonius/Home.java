@@ -88,7 +88,7 @@ public class Home extends SherlockFragment implements OnClickListener {
 			Title = "Dagrooster";
 
 			Intent i = new Intent();
-            i.setClass(getActivity(), MyWebView.class);
+            		i.setClass(getActivity(), MyWebView.class);
 			i.putExtra("home", makeUrl(0));
 			i.putExtra("title", Title);
 			startActivityForResult(i, 0);
@@ -98,7 +98,7 @@ public class Home extends SherlockFragment implements OnClickListener {
 			Title = "Standaardrooster";
 
 			Intent i1 = new Intent();
-            i1.setClass(getActivity(), MyWebView.class);
+            		i1.setClass(getActivity(), MyWebView.class);
 			i1.putExtra("home", makeUrl(1));
 			i1.putExtra("title", Title);
 			startActivityForResult(i1, 0);
@@ -109,7 +109,7 @@ public class Home extends SherlockFragment implements OnClickListener {
 			Title = "Wijzigingen klas";
 
 			Intent i2 = new Intent();
-            i2.setClass(getActivity(), MyWebView.class);
+            		i2.setClass(getActivity(), MyWebView.class);
 			i2.putExtra("home", makeUrl(2));
 			i2.putExtra("title", Title);
 			startActivityForResult(i2, 0);
@@ -120,7 +120,7 @@ public class Home extends SherlockFragment implements OnClickListener {
 			Title = "Standaardrooster";
 
 			Intent i3 = new Intent();
-            i3.setClass(getActivity(), MyWebView.class);
+            		i3.setClass(getActivity(), MyWebView.class);
 			i3.putExtra("home", makeUrl(1));
 			i3.putExtra("title", Title);
 			startActivityForResult(i3, 0);
