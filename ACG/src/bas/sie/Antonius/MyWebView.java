@@ -101,8 +101,7 @@ public class MyWebView extends SherlockActivity {
 		} else {
 			new AlertDialog.Builder(this)
 					.setTitle("Internetverbinding")
-					.setMessage(
-							"De webpagina kon niet geladen worden.\nIs internet ingeschakeld?")
+					.setMessage("De webpagina kon niet geladen worden.\nIs internet ingeschakeld?")
 					.setPositiveButton("Ja",
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
@@ -115,7 +114,8 @@ public class MyWebView extends SherlockActivity {
 										int which) {
 									finish();
 								}
-							}).show();
+							})
+			.show();
 			setTitle(Title);
 		}
 	}
@@ -131,7 +131,7 @@ public class MyWebView extends SherlockActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home: // Home item
-			finish();
+			finish(); //Not an Intent to AntoniusActivity, because that resets the position of AA to the Home tab.
 			/*
 			 * Intent intent = new Intent(this, AntoniusActivity.class);
 			 * intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
