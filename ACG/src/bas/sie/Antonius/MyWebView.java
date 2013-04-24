@@ -1,15 +1,15 @@
 package bas.sie.Antonius;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.BufferedInputStream;
 import java.io.FileOutputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
+import java.net.URLConnection;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,7 +19,6 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -37,9 +36,7 @@ public class MyWebView extends SherlockActivity {
 	String URLhome;
 	String Title;
 	WebView mWebView;
-	private ProgressDialog pDialog;
 	public static final int progress_bar_type = 0;
-	private static String file_url;
 
 	final Activity activity = this;
 
@@ -61,7 +58,7 @@ public class MyWebView extends SherlockActivity {
 		mWebView.getSettings().setJavaScriptEnabled(true);
 		mWebView.getSettings().setSupportZoom(true);
 		mWebView.getSettings().setBuiltInZoomControls(true);
-		mWebView.setInitialScale(80);
+		mWebView.getSettings().setLoadWithOverviewMode(true);
 		mWebView.getSettings().setUseWideViewPort(true);
 
 		mWebView.setWebChromeClient(new WebChromeClient() {
@@ -81,10 +78,6 @@ public class MyWebView extends SherlockActivity {
 				return true;
 			}
 
-			public void onPageFinished(WebView view, String url) {
-				setSupportProgressBarIndeterminateVisibility(false);
-			}
-
 			@Override
 			public void onReceivedError(WebView view, int errorCode,
 					String description, String failingUrl) {
@@ -101,11 +94,18 @@ public class MyWebView extends SherlockActivity {
 		} else {
 			new AlertDialog.Builder(this)
 					.setTitle("Internetverbinding")
-					.setMessage("De webpagina kon niet geladen worden.\nIs internet ingeschakeld?")
+					.setMessage(
+							"Er is geen internetverbinding.\nLaatst opgeslagen lokale versie gebruiken?")
 					.setPositiveButton("Ja",
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int which) {
+									mWebView.loadUrl("file://"
+											+ Environment
+													.getExternalStorageDirectory()
+													.getPath() + "/data/"
+											+ getPackageName()
+											+ "/webpage.html");
 								}
 							})
 					.setNegativeButton("Nee",
@@ -114,8 +114,7 @@ public class MyWebView extends SherlockActivity {
 										int which) {
 									finish();
 								}
-							})
-			.show();
+							}).show();
 			setTitle(Title);
 		}
 	}
@@ -131,12 +130,8 @@ public class MyWebView extends SherlockActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home: // Home item
-			finish(); //Not an Intent to AntoniusActivity, because that resets the position of AA to the Home tab.
-			/*
-			 * Intent intent = new Intent(this, AntoniusActivity.class);
-			 * intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			 * startActivity(intent);
-			 */
+			finish(); // Not an Intent to AntoniusActivity, because that resets
+						// the position of AA to the Home tab.
 			return true;
 
 		case R.id.web:
@@ -158,40 +153,65 @@ public class MyWebView extends SherlockActivity {
 			return true;
 
 		case R.id.save: // Save item
-			if (!Environment.getExternalStorageState().equals(
+			if (Environment.getExternalStorageState().equals(
 					Environment.MEDIA_MOUNTED)) {
-				Log.d("MyApp", "No SDCARD");
+
+				setSupportProgressBarIndeterminateVisibility(true);
+				setTitle("Bestand downloaden");
+
+				// execute this when the downloader must be fired
+				DownloadFile downloadFile = new DownloadFile();
+				downloadFile.execute(URLhome);
+
+				setSupportProgressBarIndeterminateVisibility(false);
+				setTitle(Title);
+
+				Toast.makeText(this, "Bestand opgeslagen", Toast.LENGTH_SHORT)
+						.show();
+
 			} else {
-				File directory = new File(Environment
-						.getExternalStorageDirectory().getPath()
-						+ "/data/"
-						+ getPackageName() + "/");
-				directory.mkdirs();
+				Toast.makeText(this, "Kan niet naar de telefoon schrijven",
+						Toast.LENGTH_LONG).show();
 			}
-			// starting new Async Task
 
 		default:
 			return super.onOptionsItemSelected(item);
 		}
 	}
 
-	public void onBackPressed() {
-		mWebView.clearCache(true);
-		finish();
-	}
+	// usually, subclasses of AsyncTask are declared inside the activity class.
+	// that way, you can easily modify the UI thread from here
+	private class DownloadFile extends AsyncTask<String, Integer, String> {
+		@Override
+		protected String doInBackground(String... sUrl) {
+			try {
+				URL url = new URL(URLhome);
+				URLConnection connection = url.openConnection();
+				connection.connect();
 
-	public static boolean deleteDir(File dir) {
-		if (dir != null && dir.isDirectory()) {
-			String[] children = dir.list();
-			for (int i = 0; i < children.length; i++) {
-				boolean success = deleteDir(new File(dir, children[i]));
-				if (!success) {
-					return false;
+				// download the file
+				InputStream input = new BufferedInputStream(url.openStream());
+				OutputStream output = new FileOutputStream(Environment
+						.getExternalStorageDirectory().getPath()
+						+ "/data/"
+						+ getPackageName() + "/webpage.html");
+
+				byte data[] = new byte[1024];
+				int count;
+				try {
+					while ((count = input.read(data)) != -1)
+						output.write(data, 0, count);
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
-			}
-		}
 
-		// The directory is now empty so delete it
-		return dir.delete();
+				output.flush();
+				output.close();
+				input.close();
+			} catch (IOException ioe) {
+				ioe.printStackTrace();
+			}
+			return null;
+		}
 	}
 }

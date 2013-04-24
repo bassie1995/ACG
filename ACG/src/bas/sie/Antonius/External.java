@@ -73,7 +73,7 @@ public class External extends SherlockFragment implements OnClickListener {
 			bord.setClass(getActivity(), MyWebView.class);
 			bord.putExtra("home", URLhome);
 			bord.putExtra("title", Title);
-			startActivityForResult(bord, 0);
+			startActivity(bord);
 			break;
 		case R.id.btnOuderPortaal:
 			URLhome = "https://portaal.mijnsom.nl/login/ccg";
@@ -83,16 +83,18 @@ public class External extends SherlockFragment implements OnClickListener {
 			portaal.setClass(getActivity(), MyWebView.class);
 			portaal.putExtra("home", URLhome);
 			portaal.putExtra("title", Title);
-			startActivityForResult(portaal, 0);
+			startActivity(portaal);
 			break;
 		case R.id.btnTeletop:
 			URLhome = "http://antoniuscollege.teletop.nl/";
 
-			Intent teletop = new Intent(Intent.ACTION_VIEW);
-			teletop.setData(Uri.parse(URLhome));
+			Intent teletop = new Intent();
+			teletop.setClass(getActivity(), MyWebView.class);
+			teletop.putExtra("home", URLhome);
+			teletop.putExtra("title", Title);
 			startActivity(teletop);
 			break;
-		case R.id.btnMail:
+		case R.id.btnWebmail:
 			URLhome = "https://webmail.carmelcollegegouda.nl/";
 			Title = "Webmail";
 
@@ -100,17 +102,17 @@ public class External extends SherlockFragment implements OnClickListener {
 			mail.setClass(getActivity(), MyWebView.class);
 			mail.putExtra("home", URLhome);
 			mail.putExtra("title", Title);
-			startActivityForResult(mail, 0);
+			startActivity(mail);
 			break;
 		case R.id.btnYouTube:
 			URLhome = "http://m.youtube.com/results?search_query=Antoniuscollege&oq=Antoniuscollege&aq=f&aqi=&aql=&gs_l=youtube-psuggest.3...4430l12422l0l12750l31l31l9l1l2l0l122l1657l20j1l21l0.";
 			Title = "YouTube";
 			
-			Intent YT = new Intent();
-			YT.setClass(getActivity(), MyWebView.class);
-			YT.putExtra("home", URLhome);
-			YT.putExtra("title", Title);
-			startActivityForResult(YT, 0);
+			Intent youtube = new Intent();
+			youtube.setClass(getActivity(), MyWebView.class);
+			youtube.putExtra("home", URLhome);
+			youtube.putExtra("title", Title);
+			startActivity(youtube);
 			break;
 		}
 	}

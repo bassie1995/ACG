@@ -41,7 +41,7 @@ public class TeacherInfo extends SherlockActivity {
 		Info = startingIntent.getStringExtra("contact");
 		mTxtvInfo.setText(Info);
 		TeacherAb = startingIntent.getStringExtra("abbrev");
-		
+
 		mBtnTeacherDaySchedule = (Button) findViewById(R.id.btnTeacherDaySchedule);
 		mBtnTeacherStSchedule = (Button) findViewById(R.id.btnTeacherStSchedule);
 
@@ -82,7 +82,7 @@ public class TeacherInfo extends SherlockActivity {
 	    inflater.inflate(R.menu.menu, menu);
 	    return super.onCreateOptionsMenu(menu);
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
@@ -91,7 +91,7 @@ public class TeacherInfo extends SherlockActivity {
 	    	intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 	    	startActivity(intent);
 	    	return true;
-	    	
+
 	    case R.id.settings: // Settings item
 	        Intent i = new Intent(this, Settings.class); // Start Settings.java Activity
 	        startActivity(i);
